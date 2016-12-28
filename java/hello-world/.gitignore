@@ -1,0 +1,6 @@
+# folders to ignore
+.idea/
+out/
+target/
+.DS_STORE
+classes/
