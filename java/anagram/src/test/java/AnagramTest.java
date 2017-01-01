@@ -16,7 +16,6 @@ public class AnagramTest {
         assertTrue(detector.match(Arrays.asList("hello", "world", "zombies", "pants")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testSimpleAnagram() {
         Anagram detector = new Anagram("ant");
@@ -25,7 +24,6 @@ public class AnagramTest {
         assertThat(anagram.size(), is(1));
     }
 
-    @Ignore
     @Test
     public void testDetectMultipleAnagrams() {
         Anagram detector = new Anagram("master");
@@ -33,7 +31,6 @@ public class AnagramTest {
         assertThat(anagrams, allOf(hasItem("maters"), hasItem("stream")));
     }
 
-    @Ignore
     @Test
     public void testDoesNotConfuseDifferentDuplicates() {
         Anagram detector = new Anagram("galea");
@@ -41,7 +38,6 @@ public class AnagramTest {
         assertTrue(anagrams.isEmpty());
     }
 
-    @Ignore
     @Test
     public void testIdenticalWordIsNotAnagram() {
         Anagram detector = new Anagram("corn");
@@ -50,21 +46,18 @@ public class AnagramTest {
         assertThat(anagrams.size(), is(1));
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramsWithSameChecksum() {
         Anagram detector = new Anagram("mass");
         assertTrue(detector.match(Arrays.asList("last")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testEliminateAnagramSubsets() {
         Anagram detector = new Anagram("good");
         assertTrue(detector.match(Arrays.asList("dog", "goody")).isEmpty());
     }
 
-    @Ignore
     @Test
     public void testDetectAnagrams() {
         Anagram detector = new Anagram("listen");
@@ -72,7 +65,6 @@ public class AnagramTest {
         assertThat(anagrams, hasItem("inlets"));
     }
 
-    @Ignore
     @Test
     public void testMultipleAnagrams() {
         Anagram detector = new Anagram("allergy");
@@ -80,7 +72,6 @@ public class AnagramTest {
         assertThat(anagrams, allOf(hasItem("gallery"), hasItem("largely"), hasItem("regally")));
     }
 
-    @Ignore
     @Test
     public void testAnagramsAreCaseInsensitive() {
         Anagram detector = new Anagram("Orchestra");
